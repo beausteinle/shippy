@@ -3,7 +3,7 @@ module github.com/beausteinle/shippy/shippy-cli-consignment
 go 1.17
 
 require (
-	github.com/beausteinle/shippy/shippy-service-consignment v0.0.0-20220112130954-c8c4b27532cf
+	github.com/beausteinle/shippy/shippy-service-consignment v0.0.0-20220112141116-b7662fe3e543
 	google.golang.org/grpc v1.43.0
 )
 

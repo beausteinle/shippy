@@ -59,5 +59,5 @@ func main() {
 		log.Fatalf("Could not list consignments: %v", err)
 	}
 
-	log.Printf("Consignments: %v", ra.consignments)
+	log.Printf("Consignments: %v", ra.Consignments)
 }
