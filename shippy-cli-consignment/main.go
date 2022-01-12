@@ -8,11 +8,12 @@ import (
 	"os"
 
 	pb "github.com/beausteinle/shippy/shippy-service-consignment/proto/consignment"
+	"google.golang.org/grpc"
 )
 
 const (
 	address         = "localhost:50051"
-	defaultFilename = "consigment.json"
+	defaultFilename = "consignment.json"
 )
 
 func parseFile(file string) (*pb.Consignment, error) {
@@ -51,4 +52,12 @@ func main() {
 	}
 
 	log.Printf("Created: %t", r.Created)
+
+	ra, err := client.GetConsignments(context.Background(), &pb.GetRequest{})
+
+	if err != nil {
+		log.Fatalf("Could not list consignments: %v", err)
+	}
+
+	log.Printf("Consignments: %v", ra.consignments)
 }
